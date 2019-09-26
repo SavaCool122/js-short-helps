@@ -147,4 +147,58 @@ const users = new IndexedArray([
   { id: 44, name: "Vasilisa", job: "Teacher", age: 24 }
 ]); */
 
-users.findById(11);
+// users.findById(11);
+
+// function* strGenerator() {
+//   yield "H";
+//   yield "e";
+//   yield "l";
+//   yield "l";
+//   yield "o";
+// }
+
+// strGenerator();
+
+// function* numberGen(n = 10) {
+//   for (let i = 10; i < n; i++) {
+//     yield i;
+//   }
+// }
+
+// const num = numberGen(7)
+
+// Login of Geberator
+
+// const iterrarot = {
+//   gen(n = 10) {
+//     let i = 0;
+
+//     return {
+//       next() {
+//         if (i < n) {
+//           return { value: ++i, done: false };
+//         }
+//         return { value: undefined, done: true };
+//       }
+//     };
+//   }
+// };
+
+// Medoth in array
+
+const people = [
+  { name: "Vladik", age: 25, budget: 40000 },
+  { name: "Elena", age: 25, budget: 3400 },
+  { name: "Igor", age: 23, budget: 55000 },
+  { name: "Miha", age: 22, budget: 12345 },
+  { name: "Vladils", age: 27, budget: 12453 },
+  { name: "Viktory", age: 45, budget: 33300 }
+];
+
+// for (let i = 0; i < people.length; i++) {
+//   console.log(people[i]);
+// }
+
+// for (let person of people) {
+//   console.log(person);
+// }
