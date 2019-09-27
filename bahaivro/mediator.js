@@ -51,3 +51,6 @@ lena.send("Hello hello!", vlad);
 igor.send("Vsem privet");
 
 asdasda;
+asdasdaasd;
+
+DynamicsCompressorNodesda;
