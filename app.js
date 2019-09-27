@@ -188,8 +188,8 @@ const users = new IndexedArray([
 
 const people = [
   { name: "Vladik", age: 25, budget: 40000 },
-  { name: "Elena", age: 25, budget: 3400 },
-  { name: "Igor", age: 23, budget: 55000 },
+  { name: "Elena", age: 12, budget: 3400 },
+  { name: "Igor", age: 13, budget: 55000 },
   { name: "Miha", age: 22, budget: 12345 },
   { name: "Vladils", age: 27, budget: 12453 },
   { name: "Viktory", age: 45, budget: 33300 }
@@ -202,3 +202,21 @@ const people = [
 // for (let person of people) {
 //   console.log(person);
 // }
+
+//ForEach
+
+// people.forEach(person => console.log(person));
+
+//Map
+
+// const newPeople = people.map((person) => `${person.name} (${person.age})`);
+// console.log(newPeople);
+
+//Filter
+
+// const adults = people.filter((person) => person.age >= 18);
+// console.log(adults);
+
+//Reduce
+
+var Arrpeople = people.reduce();
