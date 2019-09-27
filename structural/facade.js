@@ -42,3 +42,5 @@ const registry = new ComplaintRegistry();
 
 console.log(registry.register("Vladilen", "service", "недоступен"));
 console.log(registry.register("Elena", "product", "вылазит ошибка"));
+
+adad;
