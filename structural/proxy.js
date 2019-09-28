@@ -14,3 +14,7 @@ const proxiedFetch = new Proxy(networkFetch, {
     }
   }
 });
+
+console.log(proxiedFetch("angular.io"));
+console.log(proxiedFetch("react.io"));
+console.log(proxiedFetch("angular.io"));
