@@ -49,3 +49,18 @@ var result = mapped.map(function(el) {
 });
 
 console.log(result);
+
+// WAy to sort objects 
+
+var cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+
+displayCars();
+
+function myFunction() {
+  cars.sort(function(a, b){return a.year - b.year});
+  displayCars();
+}
