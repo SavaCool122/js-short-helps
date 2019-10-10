@@ -8,6 +8,15 @@ const items = [
   { name: 'TV', price: 25 }
 ];
 
+const readyTablet = [];
+
+class Tablet {
+  constructor(name, totalPrice) {
+    this.name = name;
+    this.price = totalPrice;
+  }
+}
+
 // --- Find Unic values -----
 
 unicValues = [];
@@ -21,7 +30,6 @@ let unique = [...new Set(unicValues)];
 // --- Culc sum of prices -----
 
 for (let unicName of unique) {
-  console.log(unicName);
   const filterItems = items.filter((item) => {
     return item.name === unicName;
   });
@@ -30,5 +38,8 @@ for (let unicName of unique) {
     return item.price + curretnTotal;
   }, 0);
 
-  console.log(total);
+  tablet = new Tablet(unicName, total);
+  readyTablet.push(tablet);
 }
+
+console.log(readyTablet);
