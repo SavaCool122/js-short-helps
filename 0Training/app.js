@@ -1,30 +1,88 @@
-// First function to rewrite from <lib>.js
+// ---- Chunk ----
 
-var express = require('express');
-const fs = require('fs');
-const router = express.Router();
-const app = express();
+// let latters = ['a', 'b', 'c', false, 'd', 'g', 'k'];
 
-// Home page route.
-app.get('/', function(req, res) {
-  res.send('Wiki home page');
-});
+let _chunk = (arr, size) => {
+  let chunk = [];
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+    if (chunk.length === size) {
+      result.push(chunk);
+      chunk = [];
+      chunk.push(element);
+      result.push(chunk);
+    } else chunk.push(element);
+  }
+  return result;
+};
 
-// About page route.
-app.get('/about', function(req, res) {
-  res.send('About this wiki');
-});
+// let resChunk = _chunk(latters, 3);
 
-module.exports = router;
+// console.log(resChunk);
 
-// app.post('/users', function(req, res) {
-//   const user = req.body;
-//   fs.appendToFile(
-//     'users.txt',
-//     JSON.stringify({ name: user.name, age: user.age }),
-//     (err) => {
-//       res.send('successfully registered');
-//     }
-//   );
-// });
-app.listen(3000);
+// --- Compact ----
+
+function compact(arr) {
+  let i = -1,
+    length = arr == null ? 0 : arr.length;
+  (resIndex = 0), (result = []);
+
+  while (++i < length) {
+    let element = arr[i];
+    if (element) {
+      result[resIndex++] = element;
+    }
+  }
+  return result;
+}
+
+// console.log(compact(latters));
+
+let concat = (arr, val) => {
+  return (result = [...arr, val]);
+};
+
+// let num = ['1'];
+// let other = concat(num, '2131', 3, [4]);
+
+// console.log(other);
+
+// ---- Drop ----
+
+let drop = (arr, n) => {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    const el = arr[i];
+    if (el !== n) {
+      result.push(el);
+    }
+  }
+  return result;
+};
+
+// let arrOfNum = [1, 2, 3, 4];
+
+// let res = drop(arrOfNum, 2);
+
+// console.log(res);
+
+// --- DropRight ---
+
+// let arrOfNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+let dropRight = (arr, n) => {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    const el = arr[i];
+    if (el !== n) {
+      result.push(el);
+    } else {
+      return result;
+    }
+  }
+};
+
+// let res = dropRight(arrOfNum, 7);
+
+// console.log(res);
