@@ -86,3 +86,45 @@ let dropRight = (arr, n) => {
 // let res = dropRight(arrOfNum, 7);
 
 // console.log(res);
+
+// ---- Join -----
+
+let arrOfLeter = ['a', 'b', 'a', 'c', 'g'];
+
+let _join = (arr, sep) => {
+  let result = '';
+  for (i in arr) {
+    const el = arr[i];
+    if (i == 0) {
+      result += el;
+    } else {
+      resArr = `${sep}${el}`;
+      result += resArr;
+    }
+  }
+  return result;
+};
+
+// let res = _join(arrOfLeter, '~');
+
+// console.log(res);
+
+// --- pullAll (not ready)----
+
+// var array = ['a', 'b', 'c', 'a', 'b', 'c'];
+
+// const _pullAll = (arr, elArr) => {
+//   let result = [];
+//   for (index in elArr) {
+//     drop(arr, elArr[index]);
+//     console.log(newArr);
+//   }
+
+//   return result;
+// };
+
+// res = _pullAll(array, ['a', 'c']);
+
+// console.log(res);
+
+
