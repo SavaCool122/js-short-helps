@@ -111,8 +111,6 @@ let _join = (arr, sep) => {
 
 // --- pullAll (not ready)----
 
-// var array = ['a', 'b', 'c', 'a', 'b', 'c'];
-
 // const _pullAll = (arr, elArr) => {
 //   let result = [];
 //   for (index in elArr) {
@@ -127,4 +125,67 @@ let _join = (arr, sep) => {
 
 // console.log(res);
 
+// --- baseSlice ---
 
+function baseSlice(array, start, end) {
+  var index = -1,
+    length = array.length;
+
+  if (start < 0) {
+    start = -start > length ? 0 : length + start;
+  }
+  end = end > length ? length : end;
+  if (end < 0) {
+    end += length;
+  }
+  length = start > end ? 0 : (end - start) >>> 0;
+  start >>>= 0;
+
+  var result = Array(length);
+  while (++index < length) {
+    result[index] = array[index + start];
+  }
+  return result;
+}
+
+var array = ['1', '2', '3', '4', '5', '6'];
+
+// --- Take -----
+
+let _take = (array, n, guard) => {
+  if (!(array && array.length)) {
+    return [];
+  }
+  return baseSlice(array, 0, n < 0 ? 0 : n);
+};
+
+// console.log(_take(array, 2));
+
+// --- take right
+
+let _takeRight = (arr, n) => {
+  if (!(arr && arr.length)) {
+    return [];
+  }
+  n = arr.length - n;
+  return baseSlice(arr, n < 0 ? 0 : n, arr.length);
+};
+
+// console.log(_takeRight(array, 1));
+
+// --- Union (no ready)---
+
+const numbers1 = [1, 2, 4, 4, 5, 6, 6, 7, 7, 8, 8, 8, 9, 9];
+
+const numbers2 = [12, 10];
+
+let _inion = (arrs) => {
+  const array = [...arrs];
+  console.log(array);
+};
+
+const array1 = ['Vijendra', 'Singh'];
+const array2 = ['Singh', 'Shakya'];
+const array3 = [...numbers1, ...numbers2];
+
+console.log(_inion(numbers2, numbers1));
