@@ -189,3 +189,11 @@ const array2 = ['Singh', 'Shakya'];
 const array3 = [...numbers1, ...numbers2];
 
 console.log(_inion(numbers2, numbers1));
+// --- Iniq ----
+
+const _uniq = (arr) => {
+  let set = new Set(arr);
+  let setArr = [...set];
+  return setArr;
+};
+
