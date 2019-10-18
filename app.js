@@ -220,3 +220,14 @@ const people = [
 //Reduce
 
 var Arrpeople = people.reduce();
+
+// --- Revers word and sentetnses
+
+let idea = 'Super woman';
+
+let result = idea
+  .split('')
+  .reverse()
+  .join('');
+
+console.log(result);
