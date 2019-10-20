@@ -134,7 +134,34 @@ const numbers1 = [2, 1, 4, 4, 5, 6, 5, 7, 7, 8, 8, 8, 9, 9];
 
 const numbers2 = [12, 110];
 
-let _inion = (...numbers) => {
+const _inion = (...numbers) => {
   let arr = [];
   return (result = _uniq(arr.concat(...numbers)));
+};
+
+// --- Times ---
+
+let times = (iterator) => {
+  result = [];
+  for (let i = 1; i <= iterator; i++) {
+    result.push(i);
+  }
+  return result;
+};
+
+// --- repeat ---
+
+const repeat = (el, n = 0) => {
+  let result = '';
+  for (let i = 0; i < n; i++) {
+    result += el;
+  }
+
+  return result;
+};
+
+// --- Split ---
+
+const _split = (string, el, lim = string.length) => {
+  return baseSlice(string.split('').filter((item) => item !== el), 0, lim);
 };
