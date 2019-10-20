@@ -120,3 +120,21 @@ let _takeRight = (arr, n) => {
   return baseSlice(arr, n < 0 ? 0 : n, arr.length);
 };
 
+// --- Iniq ----
+
+const _uniq = (arr) => {
+  let set = new Set(arr);
+  let setArr = [...set];
+  return setArr;
+};
+
+// --- Union ---
+
+const numbers1 = [2, 1, 4, 4, 5, 6, 5, 7, 7, 8, 8, 8, 9, 9];
+
+const numbers2 = [12, 110];
+
+let _inion = (...numbers) => {
+  let arr = [];
+  return (result = _uniq(arr.concat(...numbers)));
+};
