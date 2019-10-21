@@ -165,3 +165,14 @@ const repeat = (el, n = 0) => {
 const _split = (string, el, lim = string.length) => {
   return baseSlice(string.split('').filter((item) => item !== el), 0, lim);
 };
+
+//--- Latters counter ----
+
+const latters = ['a', 'v', 'b', 'a', 'f', 'g', 'a'];
+
+const letterCount = latters.reduce((acc, cur) => {
+  return acc + (cur === 'a' ? 1 : 0);
+}, 0);
+console.log(letterCount);
+
+
