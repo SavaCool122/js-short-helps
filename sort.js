@@ -1,66 +1,97 @@
+
+// --- Sort ---
+
 // массив для сортировки
+var listNumber = [7, 40, 5, 12, 300];
 var list = ['Дельта', 'альфа', 'ЧАРЛИ', 'браво'];
 
-// временный массив содержит объекты с позицией и значением сортировки
-var mapped = list.map(function(el, i) {
-  return { index: i, value: el.toLowerCase() };
-});
+// --- Sort for numbers
 
-// сортируем массив, содержащий уменьшенные значения
-mapped.sort(function(a, b) {
-  if (a.value > b.value) {
-    return 1;
-  }
-  if (a.value < b.value) {
-    return -1;
-  }
-  return 0;
-});
-
-// контейнер для результа
-var result = mapped.map(function(el) {
-  return list[el.index];
-});
-
-console.log(result);
-
-// массив для сортировки
-var list = [7, 40, 300];
-
-// временный массив содержит объекты с позицией и значением сортировки
-var mapped = list.map(function(el, i) {
-  return { index: i, value: el };
-});
-
-// сортируем массив, содержащий уменьшенные значения
-mapped.sort(function(a, b) {
-  if (a.value > b.value) {
-    return 1;
-  }
-  if (a.value < b.value) {
-    return -1;
-  }
-  return 0;
-});
-
-// контейнер для результа
-var result = mapped.map(function(el) {
-  return list[el.index];
-});
-
-console.log(result);
-
-// WAy to sort objects 
+let mySortedFunction = (item) => item.sort((a, b) => a.year - b.year);
 
 var cars = [
-  {type:"Volvo", year:2016},
-  {type:"Saab", year:2001},
-  {type:"BMW", year:2010}
+  { type: 'Volvo', year: 2316 },
+  { type: 'Volvo', year: 5316 },
+  { type: 'Saab', year: 203 },
+  { type: 'Saab', year: 800 },
+  { type: 'Saab', year: 2001 },
+  { type: 'BMW', year: 2010 }
 ];
 
-displayCars();
+//console.log(mySortedFunction(cars));
 
-function myFunction() {
-  cars.sort(function(a, b){return a.year - b.year});
-  displayCars();
-}
+// --- Sort For Text
+const sortWords = (arr) => {
+  mapped = arr.map((el, i) => {
+    return { index: i, value: el.toLowerCase() };
+  });
+
+  // сортируем массив with index
+  mapped.sort((a, b) => {
+    if (a.value > b.value) {
+      return 1;
+    }
+    if (a.value < b.value) {
+      return -1;
+    }
+    return 0;
+  });
+
+  return (result = mapped.map(function(el) {
+    return list[el.index];
+  }));
+};
+
+// ---Bubble sort
+
+bubbleSort = (array) => {
+  let swapped = false;
+  do {
+    swapped = false;
+    array.forEach((current, i) => {
+      console.log(array.join(' '));
+      if (current > array[i + 1]) {
+        const temp = current;
+        console.log(array.join(' '));
+
+        array[i] = array[i + 1];
+        array[i + 1] = temp;
+        swapped = true;
+      }
+    });
+  } while (swapped);
+  console.log(array.join(' '));
+  return array;
+};
+
+const numbers = [8, 5, 6, 9, 3, 1, 4, 2, 7, 10];
+
+// --- BinarSort
+
+divide = (array) => {
+  if (array.length < 2) {
+    return array;
+  }
+  const mid = Math.floor(array.length / 2);
+  const smallOne = array.slice(0, mid);
+  const smallTwo = array.slice(mid);
+  return sort(divide(smallOne), divide(smallTwo));
+};
+
+sort = (smallOne, smallTwo) => {
+  const sorted = [];
+  while (smallOne.length && smallTwo.length) {
+    if (smallOne[0] <= smallTwo[0]) {
+      sorted.push(smallOne.shift());
+    } else {
+      sorted.push(smallTwo.shift());
+    }
+  }
+  const output = [...sorted, ...smallOne, ...smallTwo];
+  console.log(output);
+  return output;
+};
+
+const numbers = [8, 5, 6, 9, 3, 1, 4, 2, 7, 10];
+console.log(divide(numbers));
+
