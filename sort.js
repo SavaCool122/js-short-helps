@@ -95,3 +95,45 @@ sort = (smallOne, smallTwo) => {
 const numbers = [8, 5, 6, 9, 3, 1, 4, 2, 7, 10];
 console.log(divide(numbers));
 
+
+// ---- Insert sort
+
+insertionSort = (array) => {
+  for (outer = 1; outer < array.length; outer++) {
+    for (inner = 0; inner < outer; inner++) {
+      console.log(array.join(' '));
+      if (array[outer] < array[inner]) {
+        const [element] = array.splice(outer, 1);
+        array.splice(inner, 0, element);
+      }
+    }
+  }
+  console.log(array.join(' '));
+  return array;
+};
+const numbers = [8, 5, 6, 9, 3, 1, 4, 2, 7, 10];
+insertionSort(numbers);
+console.log(insertionSort(numbers));
+
+// --- quiq sort ---
+
+quickSort = (array) => {
+  if (array.length < 2) {
+    return array;
+  }
+  const chosenIndex = array.length - 1;
+  const chosen = array[chosenIndex];
+  const a = [];
+  const b = [];
+  for (let i = 0; i < chosenIndex; i++) {
+    const temp = array[i];
+    temp < chosen ? a.push(temp) : b.push(temp);
+  }
+
+  const output = [...quickSort(a), chosen, ...quickSort(b)];
+  console.log(output.join(' '));
+  return output;
+};
+const numbers = [8, 5, 6, 9, 3, 1, 4, 2, 7, 10];
+quickSort(numbers);
+console.log(quickSort(numbers));
