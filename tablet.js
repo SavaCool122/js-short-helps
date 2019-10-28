@@ -48,3 +48,9 @@ const createNewTable = unicVal.map((unicVal) => {
   };
 });
 console.log(createNewTable);
+
+dsf
+sdf
+sdf
+sdf
+sdf
