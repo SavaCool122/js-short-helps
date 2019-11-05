@@ -63,3 +63,16 @@
 // console.log(2 ** 3);
 // console.log(2 ** 4);
 // console.log(2 ** 5);
+
+
+const typeOfIndex = function(i){
+  if (i >= raspivArr.length){
+    newI = i - raspivArr.length
+    if (newI >= otlivantArr.length ){
+      newI = newI - otlivantArr.length
+      if (newI >= ostatokArr.length){
+        console.log('error:Index is very big');
+      } return { selector: 'ostatok', newIndex: newI}
+    } return { selector: 'otlivant', newIndex: newI }
+  } return { selector: 'raspiv', newIndex: i }
+}
