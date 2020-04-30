@@ -7,6 +7,7 @@ This folder contains design patterns
 This folder contains PureJavaScript LazyLoading  
 ---
 ### MyLodash 
+
 This folder contains my function analogies of Library Lodash
 ---
 ### patersns 
