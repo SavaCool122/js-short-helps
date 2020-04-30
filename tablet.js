@@ -12,7 +12,7 @@ let table = [
 ];
 
 class Tablet {
-  constructor(uid,data) {
+  constructor(uid, data) {
     this.name = uid;
     this.data = data;
   }
@@ -31,11 +31,11 @@ function unique(arr) {
 }
 
 function sumOfData(arr) {
-    let 
-    for(let i = 0; i < arr.lenth; i++) {
-        let arg = arr.name 
-        
-    }
+  let
+  for (let i = 0; i < arr.lenth; i++) {
+    let arg = arr.name
+
+  }
 }
 
 let unicVal = unique(table);
@@ -48,9 +48,3 @@ const createNewTable = unicVal.map((unicVal) => {
   };
 });
 console.log(createNewTable);
-
-dsf
-sdf
-sdf
-sdf
-sdf
